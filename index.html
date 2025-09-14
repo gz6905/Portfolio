@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>GZ's Personal Portfolio</title>
+    <link rel = "stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body> 
+<div id="header">
+    <div class="container">
+        <nav>
+            <img src ="images/logo-placeholder.jpg" class ="logo">
+            <ul id = "sidemenu">
+                <li><a href="#header">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+            </ul>
+            <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+        </nav>
+        <div class="header-text">
+            <p>Computer Science Student @ RIT, Class of 2028</p>
+            <h1>Hi, I'm <span>George Zhang</span><br> and I love solving problems with code</h1>
+        </div>
+    </div>
+</div>
+<!-------about_me------->
+<div id="about">
+    <div class="container">
+        <div class="row">
+            <div class="col1">
+                <img src="images/about-me-placeholder.png">
+            </div>
+            <div class="col2">
+                <h1 class="about-me-text">About Me</h1>
+                <p>I’m George, a curious and dedicated computer science student who loves tackling challenges through code. 
+                    I enjoy breaking down complex problems and finding practical solutions, whether that’s through a personal project or collaborative teamwork.  
+                    Learning new technologies and methodologies keeps me motivated, and I’m always looking for opportunities to grow and contribute meaningfully to software development.  
+                    Outside of coding, I’m passionate about gaming, which fuels my creativity and strategic thinking both in and out of the digital world.
+                </p>
+
+
+                <div class="tab-titles">
+                    <p class="tab-sections active-link" onclick="opentab('skills')">Skills</p>
+                    <p class="tab-sections" onclick="opentab('experience')">Experience</p>
+                    <p class="tab-sections" onclick="opentab('education')">Education</p>
+                </div>
+                <div class="tab-contents active-tab" id="skills">
+                    <ul>
+                        <li><span>Programming Languages</span><br>C, C++, Python, Java, HTML, CSS</li>
+                        <li><span>Tools & Technologies</span><br>Git, GitHub, VS Code, PyCharm, IntelliJ IDEA, Trello, Slack</li>
+                        <li><span>Other Skills</span><br>Debugging, Version Control, Agile/Scrum basics</li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="experience">
+                    <ul>
+                        <li><span>Currently looking for internship/co-op</span><br></li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="education">
+                <ul>
+                    <li><span>Rochester Institute of Technology (RIT)</span><br>Bachelor of Science in Computer Science, Class of 2028</li>
+                    <li><span>High School Diploma</span><br>Graduated from Fort Hamilton High School, 2023</li>
+                    <li><span>Relevant Coursework</span><br>Intro to AI, Intro to Software Engineering, Analysis of Algorithms, Principles of Data Management,<br>
+                    Mechanics of Programming, Linear Algebra</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!----------Portfolio----------->
+<div id="portfolio">
+    <div class="container">
+        <h1 class="sub-title">My Work (Currently in progress)</h1>
+        <div class="work-list">
+            <div class="work">
+                <img src="images/Portfolio-Photo-1.jpg">
+                <div class="layer">
+                    <h3>In Progress</h3>
+                    <p>Currently in progress.</p>
+                    <!-------<a href="#">Link here</a>----->
+                </div>
+            </div>
+            <div class="work">
+                <img src="images/Portfolio-Photo-2.jpg">
+                <div class="layer">
+                    <h3>In Progress</h3>
+                    <p>Currently in progress.</p>
+                    <!-------<a href="#">Link here</a>----->
+                </div>
+            </div>
+            <div class="work">
+                <img src="images/Portfolio-Photo-3.jpg">
+                <div class="layer">
+                    <h3>In Progress</h3>
+                    <p>Currently in progress.</p>
+                    <!-------<a href="#">Link here</a>----->
+                </div>
+            </div>
+            <div class="work">
+                <img src="images/Portfolio-Photo-1.jpg">
+                <div class="layer">
+                    <h3>Finance Tracker</h3>
+                    <p>Personal finance tracker web app built with Next.js and MongoDB.</p>
+                    <a href="https://financetracker-six-pi.vercel.app" target="_blank" rel="noopener" title="View Project"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-----------Contact------------>
+<div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="sub-title">Contact Me</h1>
+                <p><i class="fa-solid fa-envelope"></i>george.zhang1234567@gmail.com</p>
+                <p><i class="fa-solid fa-phone"></i>646-392-3698</p>
+                <div class="social-icons">
+                    <a href="https://www.linkedin.com/in/georgezhang321/"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://rit.joinhandshake.com/profiles/ts6thm"><i class="fa-solid fa-handshake"></i></a>
+                </div>
+                <a href="images/George_Zhang_Resume.pdf" download class="btn">Download CV</a>
+            </div>
+            <div class="contact-right">
+                <form name = "submit-to-google-sheet">
+                    <input type="text" name="Name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                    <button type="submit" class="btn">Submit</button>
+                </form>
+                <span id = "msg"></span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    var tablinks = document.getElementsByClassName("tab-sections");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+
+    function opentab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link");
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+    }
+</script>
+
+<script>
+    var sidemenu = document.getElementById("sidemenu");
+
+    function openmenu(){
+        sidemenu.style.right = "0";
+    }
+    function closemenu(){
+        sidemenu.style.right = "-200px";
+    }
+</script>
+
+<script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbw3oh8VaYtOrxtn2p0OYIegsI5mySpng4xS3l50zUguMVxKDd4cNXoCwXcM8qzD3_6qYw/exec'
+  const form = document.forms['submit-to-google-sheet']
+  const msg = document.getElementById("msg")
+
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => {
+        msg.innerHTML = "Message Sent Successfully!"
+        setTimeout(function(){
+            msg.innerHTML = ""
+        },2000)
+        form.reset()
+      })
+      .catch(error => console.error('Error!', error.message))
+  })
+</script>
+
+
+</body>
+</html>
